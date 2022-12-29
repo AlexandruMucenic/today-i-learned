@@ -10,7 +10,7 @@ function NewFactForm() {
         <option value='science'>Science</option>
         <option value='finance'>Finance</option>
       </select>
-      <button class='btn btn-large'>Post</button>
+      <button className='btn btn-large'>Post</button>
     </form>
   );
 }
