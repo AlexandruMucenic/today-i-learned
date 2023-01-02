@@ -1,14 +1,22 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import supabase from './supabase';
 import NewFactForm from './components/NewFactForm';
 import CategoryFilter from './components/CategoryFilter';
 import FactList from './components/FactsList';
 import Header from './components/Header';
-import { initialFacts } from './constants';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [facts, setFacts] = useState(initialFacts);
+  const [facts, setFacts] = useState([]);
+
+  useEffect(() => {
+    async function getFacts() {
+      let { data: facts, error } = await supabase.from('facts').select('*');
+      error ? console.log(error) : setFacts(facts);
+    }
+    getFacts();
+  }, []);
 
   return (
     <>
