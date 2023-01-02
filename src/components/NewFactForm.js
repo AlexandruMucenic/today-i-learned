@@ -1,13 +1,42 @@
 import { useState } from 'react';
-import { CATEGORIES } from '../Categories';
+import { CATEGORIES, isValidHttpUrl } from '../Categories';
 
-function NewFactForm() {
+function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState('');
   const [source, setSource] = useState('');
   const [category, setCategory] = useState('');
 
   function handleSubmit(e) {
+    // 1. prevent browser reload
     e.preventDefault();
+
+    // 2. Check if data is valid. If so, create a new fact
+    text && isValidHttpUrl(source) && category
+      ? console.log(text, source, category)
+      : console.log('no data');
+
+    // 3. Create a new fact object
+    const newFact = {
+      id: Math.round(Math.random() * 1000000),
+      text,
+      source,
+      category,
+      votesInteresting: 0,
+      votesMindblowing: 0,
+      votesFalse: 0,
+      createdIn: new Date().getFullYear(),
+    };
+
+    // 4. Add the new fact to the UI
+    setFacts(facts => [newFact, ...facts]);
+
+    // 5. Reset input fields
+    setText('');
+    setSource('');
+    setCategory('');
+
+    // 6. Close the form
+    setShowForm(false);
   }
 
   return (
