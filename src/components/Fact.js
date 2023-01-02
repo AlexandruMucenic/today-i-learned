@@ -1,4 +1,4 @@
-import { CATEGORIES } from './../Categories';
+import { CATEGORIES } from '../Categories';
 
 function Fact({ fact }) {
   return (
