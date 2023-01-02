@@ -2,21 +2,16 @@ import './App.css';
 import NewFactForm from './components/NewFactForm';
 import CategoryFilter from './components/CategoryFilter';
 import FactList from './components/FactsList';
+import { useState } from 'react';
+import Header from './components/Header';
 
 function App() {
-  const appTitle = 'Today I Learned';
+  const [showForm, setShowForm] = useState(true);
 
   return (
     <>
-      {/* Header */}
-      <header className='header'>
-        <div className='logo'>
-          <img src='logo.png' alt='Today I Learned Logo' />
-          <h1>{appTitle}</h1>
-        </div>
-        <button className='btn btn-large btn-open'>Share a fact</button>
-      </header>
-      <NewFactForm />
+      <Header showForm={showForm} setShowForm={setShowForm} />
+      {showForm ? <NewFactForm /> : null}
       <main className='main'>
         <CategoryFilter />
         <FactList />
