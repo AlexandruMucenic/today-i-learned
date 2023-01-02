@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CATEGORIES, isValidHttpUrl } from '../Categories';
+import { CATEGORIES, isValidHttpUrl } from '../constants';
 
 function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState('');

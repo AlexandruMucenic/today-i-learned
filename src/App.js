@@ -4,7 +4,7 @@ import NewFactForm from './components/NewFactForm';
 import CategoryFilter from './components/CategoryFilter';
 import FactList from './components/FactsList';
 import Header from './components/Header';
-import { initialFacts } from './Categories';
+import { initialFacts } from './constants';
 
 function App() {
   const [showForm, setShowForm] = useState(false);

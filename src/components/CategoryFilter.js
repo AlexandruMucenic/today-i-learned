@@ -1,4 +1,4 @@
-import { CATEGORIES } from '../Categories';
+import { CATEGORIES } from '../constants';
 
 function CategoryFilter() {
   return (
