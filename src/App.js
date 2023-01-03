@@ -5,15 +5,22 @@ import NewFactForm from './components/NewFactForm';
 import CategoryFilter from './components/CategoryFilter';
 import FactList from './components/FactsList';
 import Header from './components/Header';
+import Loader from './components/Loader';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [facts, setFacts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getFacts() {
-      let { data: facts, error } = await supabase.from('facts').select('*');
-      error ? console.log(error) : setFacts(facts);
+      setIsLoading(true);
+      let { data: facts, error } = await supabase
+        .from('facts')
+        .select('*')
+        .order('votesInteresting', { ascending: false });
+      error ? alert(error.message) : setFacts(facts);
+      setIsLoading(false);
     }
     getFacts();
   }, []);
@@ -26,7 +33,7 @@ function App() {
       ) : null}
       <main className='main'>
         <CategoryFilter />
-        <FactList facts={facts} />
+        {isLoading ? <Loader /> : <FactList facts={facts} />}
       </main>
     </>
   );

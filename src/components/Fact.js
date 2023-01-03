@@ -25,7 +25,7 @@ function Fact({ fact }) {
       </span>
       <div className='vote-buttons'>
         <button>👍 {fact.votesInteresting}</button>
-        <button>🤯 {fact.votesMindblowing}</button>
+        <button>🤯 {fact.votesMindBlowing}</button>
         <button>⛔ {fact.votesFalse}</button>
       </div>
     </li>
