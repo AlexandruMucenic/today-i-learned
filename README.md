@@ -1,6 +1,6 @@
 Netlify link - https://fullstack-app-course.netlify.app
 
-App developved trough the following course https://www.udemy.com/course/full-stack-crash-course/
+App developved through the following course https://www.udemy.com/course/full-stack-crash-course/
 
 Frontend technologies:
 HTML
