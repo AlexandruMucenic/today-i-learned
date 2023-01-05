@@ -14,6 +14,12 @@ body {
   display: none !important;
 }
 
+.disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 12px;
+}
+
 /* Main Layouts  */
 #root {
   max-width: 1500px;
