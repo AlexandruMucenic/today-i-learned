@@ -177,6 +177,10 @@ ul {
   background-color: #0c4a6e;
 }
 
+.vote-buttons button:disabled {
+  background-color: #0369a1;
+}
+
 /* Form */
 
 .fact-form {
