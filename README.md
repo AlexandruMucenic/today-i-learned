@@ -1,4 +1,4 @@
-Netlify link - https://fullstack-app-course.netlify.app
+Netlify link - https://amucenic-today-i-learned.netlify.app
 
 App developed through the following course https://www.udemy.com/course/full-stack-crash-course/
 
