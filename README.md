@@ -5,7 +5,7 @@ App developed through the following course https://www.udemy.com/course/full-sta
 Frontend technologies:
 HTML
 CSS
-Javascript
+JavaScript
 React.js
 
 Backend created on Supabase
